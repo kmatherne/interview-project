@@ -22,7 +22,11 @@
 			foreach ($json as $val) {
 				print_r ($val);
 			}
-			$redis->hMSet('data:' . $id, $json['data']);
+			$dataArray = array();
+			foreach ($json['data'] as $data) {
+				array_push($dataArray, json_encode($data));
+			}
+			$redis->hMSet('data:' . $id, $dataArray);
 			$pushed = $redis->rPush('endpoint_query', $id);
 			if (!$pushed) {
 				print "\nError pushing to enpoint query\n";
