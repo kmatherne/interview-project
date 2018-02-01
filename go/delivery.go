@@ -14,7 +14,7 @@ const (
 	REDISADD = "127.0.0.1"
 	REDISPORT = ":8888"
 	REDISPASS = "siege87751"
-	REDISDB = "0"
+	REDISDB = 0
 	REDISSTACK = "endpoint_query"
 	REDISENDPOINT = "endpoint:"
 	REDISDATA = "data:"
